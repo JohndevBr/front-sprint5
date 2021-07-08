@@ -32,6 +32,7 @@ export function ProductsProvider({children}: ProductsProviderProps) {
         .catch((error) => {setMessage("Erro ao carregar produtos")})
         .finally(() => removeRequest())
         
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (

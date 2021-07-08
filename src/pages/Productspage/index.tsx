@@ -3,7 +3,6 @@ import { Link} from 'react-router-dom'
 import { Filters } from './Filters'
 import { ProductsContext } from "../../contexts/ProductsContext"
 import { FilterItemContext } from "../../contexts/FilterItemContext"
-import { orderBy } from "lodash"
 
 
 interface ProductProps {
@@ -45,7 +44,7 @@ export function ProductsPage(){
                         filter ? p.name.toUpperCase().indexOf(filter.toUpperCase()) !== -1 : true)
                     .map(product =>
                         <Product key={product.sku} image={product.image} name={product.name} price={product.price} id={product.sku} />
-                        )
+                        ).sort()
                     }
                 </ol>
              </div>

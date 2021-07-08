@@ -6,7 +6,6 @@ function useLoading<S>(initialState: S | (() => S)): (() => boolean)[] {
 
     function addRequest():boolean {
         setLiveRequests(liveRequests => {
-            // console.log(`addRequest ${liveRequests}`);
             return liveRequests + 1;
         });
         return liveRequests > 0;
@@ -14,14 +13,12 @@ function useLoading<S>(initialState: S | (() => S)): (() => boolean)[] {
 
     function removeRequest():boolean {
         setLiveRequests(liveRequests => {
-            // console.log(`removeRequest ${liveRequests}`);
             return liveRequests - 1;
         });
         return liveRequests > 0;
     }
 
     function isLoading():boolean {
-        // console.log(`isLoading ${liveRequests}`);
         return liveRequests > 0;
     }
 
